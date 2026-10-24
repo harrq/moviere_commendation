@@ -27,7 +27,11 @@ app = FastAPI(title="Movie Recommendation System API")
 # Allow our future React frontend to connect
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=[
+    "http://localhost:5173",
+    "https://moviere-commendation-git-main-hyuk14.vercel.app",
+    "https://moviere-commendation-btiv8hrp6-hyuk14.vercel.app",
+],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
