@@ -25,13 +25,16 @@ tfidf_matrix = joblib.load(MODEL_DIR / "tfidf_matrix.pkl")
 app = FastAPI(title="Movie Recommendation System API")
 
 # Allow our future React frontend to connect
+from fastapi.middleware.cors import CORSMiddleware
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-    "http://localhost:5173",
-    "https://moviere-commendation-git-main-hyuk14.vercel.app",
-    "https://moviere-commendation-btiv8hrp6-hyuk14.vercel.app",
-],
+        "http://localhost:5173",
+        "https://moviere-commendation-bclk.vercel.app",
+        "https://moviere-commendation-git-main-hyuk14.vercel.app",
+        "https://moviere-commendation-btiv8hrp6-hyuk14.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
